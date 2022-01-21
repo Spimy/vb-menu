@@ -8,6 +8,10 @@
         }, True)
     End Sub
 
+    Overloads Sub Display()
+        MyBase.Display("Main Menu Auto")
+    End Sub
+
     Function InputNums() As Integer()
         Console.Write("First number: ")
         Dim Num1 As Integer = Console.ReadLine
