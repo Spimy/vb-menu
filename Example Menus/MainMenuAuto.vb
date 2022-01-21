@@ -19,12 +19,12 @@
     End Function
 
     Sub Option1()
-        Dim Nums As Integer() = InputNums()
+        Dim Nums As Integer() = Me.InputNums()
         Console.WriteLine("Result of {0} + {1} = {2}", Nums(0), Nums(1), Nums(0) + Nums(1))
     End Sub
 
     Sub Option2()
-        Dim Nums As Integer() = InputNums()
+        Dim Nums As Integer() = Me.InputNums()
         Console.WriteLine("Result of {0} - {1} = {2}", Nums(0), Nums(1), Nums(0) - Nums(1))
     End Sub
 

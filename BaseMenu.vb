@@ -17,7 +17,7 @@
     Public Sub Display(Optional MenuTitle As String = Nothing, Optional PrefixNum As Boolean = False)
         Console.Clear()
 
-        If Not MenuTitle Is Nothing Then
+        If MenuTitle IsNot Nothing Then
             Console.WriteLine("-= {0} =-", MenuTitle)
         End If
 
@@ -35,7 +35,7 @@
         Console.Clear()
 
         If AutoHandle Then
-            Dim Method = Me.GetType().GetMethod(String.Format("Option{0}", MenuOption))
+            Dim Method As Reflection.MethodInfo = Me.GetType().GetMethod(String.Format("Option{0}", MenuOption))
 
             If Method Is Nothing Then
                 Console.WriteLine("Method not implemented. Press any key continue...")
