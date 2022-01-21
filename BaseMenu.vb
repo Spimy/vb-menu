@@ -23,6 +23,7 @@
 
         Console.WriteLine(String.Join(Environment.NewLine, MenuContext))
     End Sub
+
     Public Function SelectOption(Optional AutoHandle As Boolean = False) As Integer
         Dim MenuOption As Integer = 0
 
