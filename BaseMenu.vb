@@ -25,9 +25,9 @@
     End Sub
 
     Public Function SelectOption(Optional AutoHandle As Boolean = False) As Integer
-        Dim MenuOption As Integer = 0
+        Dim MenuOption As String = ""
 
-        While MenuOption < 1 Or MenuOption > Me.MenuContext.Length
+        While Not Integer.TryParse(MenuOption, Nothing) OrElse (MenuOption < 1 Or MenuOption > Me.MenuContext.Length)
             Console.Write("Option: ")
             MenuOption = Console.ReadLine
         End While
@@ -51,7 +51,7 @@
             Me.SelectOption(True)
         End If
 
-        Return MenuOption
+        Return MenuOption ' Automatically casted as integer because of function return type
     End Function
 
 End Class
