@@ -14,7 +14,7 @@
         End If
     End Sub
 
-    Public Sub Display(Optional MenuTitle As String = Nothing, Optional PrefixNum As Boolean = False)
+    Public Sub Display(Optional MenuTitle As String = Nothing)
         Console.Clear()
 
         If MenuTitle IsNot Nothing Then
