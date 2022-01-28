@@ -1,8 +1,9 @@
 ﻿Public MustInherit Class BaseMenu
 
+    Protected ReadOnly MenuTitle As String
     Protected ReadOnly MenuContext As String()
 
-    Sub New(MenuContext As String(), Optional PrefixNum As Boolean = False)
+    Sub New(MenuContext As String(), Optional PrefixNum As Boolean = False, Optional MenuTitle As String = Nothing)
         If Not PrefixNum Then
             Me.MenuContext = MenuContext
         Else
@@ -12,13 +13,15 @@
                 End Function
             ).ToArray()
         End If
+
+        Me.MenuTitle = MenuTitle
     End Sub
 
-    Public Sub Display(Optional MenuTitle As String = Nothing)
+    Public Sub Display()
         Console.Clear()
 
-        If MenuTitle IsNot Nothing Then
-            Console.WriteLine("-= {0} =-", MenuTitle)
+        If Me.MenuTitle IsNot Nothing Then
+            Console.WriteLine("-= {0} =-", Me.MenuTitle)
         End If
 
         Console.WriteLine(String.Join(Environment.NewLine, MenuContext))
