@@ -1,15 +1,14 @@
 ﻿Public Class MainMenuManual : Inherits BaseMenu
 
     Sub New()
-        MyBase.New({
-            "1. Add 2 numbers",
-            "2. Subtract 2 numbers",
-            "3. Exit"
-        })
-    End Sub
-
-    Overloads Sub Display()
-        MyBase.Display("Main Menu Manual")
+        MyBase.New(
+            MenuContext:={
+                "1. Add 2 numbers",
+                "2. Subtract 2 numbers",
+                "3. Exit"
+            },
+            MenuTitle:="Main Menu Manual"
+        )
     End Sub
 
     Function InputNums() As Integer()

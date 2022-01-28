@@ -1,15 +1,15 @@
 ﻿Public Class MainMenuAuto : Inherits BaseMenu
 
     Sub New()
-        MyBase.New({
-            "Add 2 numbers",
-            "Subtract 2 numbers",
-            "Exit"
-        }, True)
-    End Sub
-
-    Overloads Sub Display()
-        MyBase.Display("Main Menu Auto")
+        MyBase.New(
+            MenuContext:={
+                "Add 2 numbers",
+                "Subtract 2 numbers",
+                "Exit"
+            },
+            PrefixNum:=True,
+            MenuTitle:="Main Menu Auto"
+        )
     End Sub
 
     Function InputNums() As Integer()
